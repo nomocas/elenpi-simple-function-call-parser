@@ -1,6 +1,8 @@
 // Karma configuration
 const babel = require('rollup-plugin-babel'),
-	babelrc = require('babelrc-rollup').default;
+	babelrc = require('babelrc-rollup').default,
+	nodeResolve = require('rollup-plugin-node-resolve'),
+	commonjs = require('rollup-plugin-commonjs');
 
 module.exports = function (config) {
 	config.set({
@@ -35,7 +37,13 @@ module.exports = function (config) {
 		},
 		rollupPreprocessor: {
 			plugins: [
-				babel(babelrc())
+				babel(babelrc()),
+				nodeResolve({
+					preferBuiltins: true  // Default: true
+				}),
+				commonjs({
+					ignoreGlobal: true  // Default: false
+				})
 			],
 			moduleName: 'KarmaBundle',
 			format: 'iife', // helps prevent naming collisions
