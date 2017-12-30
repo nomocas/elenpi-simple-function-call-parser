@@ -3,7 +3,9 @@
  * Simple function call parser
  */
 
-const elenpi = require('elenpi');
+let elenpi = require('elenpi');
+
+elenpi = elenpi.default || elenpi;
 
 const r = elenpi.Rule.initializer;
 
