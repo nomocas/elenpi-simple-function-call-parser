@@ -1,6 +1,6 @@
 {
   "name": "elenpi-simple-function-call-parser",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Simple function call parser",
   "main": "dist/bundles/index.js",
   "module": "dist/bundles/index.mjs",
