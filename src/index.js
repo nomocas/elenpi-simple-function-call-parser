@@ -3,7 +3,7 @@
  * Simple function call parser
  */
 
-import elenpi from 'elenpi';
+const elenpi = require('elenpi');
 
 const r = elenpi.Rule.initializer;
 
@@ -45,4 +45,4 @@ const rules = {
 		)
 };
 
-export default new elenpi.Parser(rules, 'call');
+module.exports = new elenpi.Parser(rules, 'call');
